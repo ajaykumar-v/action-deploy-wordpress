@@ -14,7 +14,7 @@ if [[ -z "$SSH_PRIVATE_KEY" ]]; then
 fi
 
 if [[ "$flag" -eq 1 ]]; then
-	printf "[\e[0;31mERROR\e[0m] Secret \`$missing_secret\` is missing. Please add it to this action for proper execution.\nRefer https://github.com/rtCamp/action-deploy-wordpress for more information.\n"
+	printf "[\e[0;31mERROR\e[0m] Secret \`$missing_secret\` is missing. Please add it to this action for proper execution.\nRefer https://github.com/tangworkshop/action-deploy-wordpress for more information.\n"
 	exit 1
 fi
 

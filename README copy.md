@@ -1,5 +1,5 @@
-This action is a part of [GitHub Actions Library](https://github.com/rtCamp/github-actions-library/) created
-by [rtCamp](https://github.com/rtCamp/).
+This action is a part of [GitHub Actions Library](https://github.com/tangworkshop/github-actions-library/) created
+by [tangworkshop](https://github.com/tangworkshop/).
 
 # Deploy WordPress - GitHub Action
 
@@ -9,7 +9,7 @@ A [GitHub Action](https://github.com/features/actions) to deploy WordPress on a 
 using [PHP's Deployer.org project](https://deployer.org/).
 
 Please note that, this action expects git repo structure in a certain way. Your webroot should include content
-inside `wp-content` except `uploads`. You may use our [WordPress Skeleton](https://github.com/rtCamp/wordpress-skeleton)
+inside `wp-content` except `uploads`. You may use our [WordPress Skeleton](https://github.com/tangworkshop/wordpress-skeleton)
 as a base, or restructre existing project to fit in.
 
 During deployment, by default this action will download [WordPress](https://wordpress.org/latest.zip), put the content
@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy
-        uses: rtCamp/action-deploy-wordpress@v3
+        uses: tangworkshop/action-deploy-wordpress@v3
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
@@ -44,7 +44,7 @@ jobs:
 4. Create `.github/hosts.yml` inventory file, based
    on [Deployer inventory file](https://deployer.org/docs/hosts.html#inventory-file) format. Make sure you explictly
    define GitHub branch mapping. Only the GitHub branches mapped in `hosts.yml` will be deployed, rest will be filtered
-   out. Here is a sample [hosts.yml](https://github.com/rtCamp/wordpress-skeleton/blob/main/.github/hosts.yml).
+   out. Here is a sample [hosts.yml](https://github.com/tangworkshop/wordpress-skeleton/blob/main/.github/hosts.yml).
 
 ## Environment Variables
 
@@ -122,7 +122,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy
-        uses: rtCamp/action-deploy-wordpress@v3
+        uses: tangworkshop/action-deploy-wordpress@v3
         env:
           VAULT_ADDR: ${{ secrets.VAULT_ADDR }}
           VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
@@ -155,9 +155,9 @@ systemctl restart ssh
    location `.github/deploy/deploy.php` in your git repository to provide your own [Deployer.org](https://deployer.org/)
    script.
     * Please note that it will completely override this
-      action's [original deploy.php](https://github.com/rtCamp/action-deploy-wordpress/blob/master/deploy.php). So if
+      action's [original deploy.php](https://github.com/tangworkshop/action-deploy-wordpress/blob/master/deploy.php). So if
       you need some portion
-      of [original deploy.php](https://github.com/rtCamp/action-deploy-wordpress/blob/master/deploy.php), you need to
+      of [original deploy.php](https://github.com/tangworkshop/action-deploy-wordpress/blob/master/deploy.php), you need to
       copy that to your own `.github/deploy/deploy.php`.
 2. If you need to add one or a few custom tasks on top of this actions `deploy.php`, you can create a file at
    location `.github/deploy/addon.php` in your git repository. Checkout the [example addon.php](./example/addon.php) to
@@ -168,8 +168,8 @@ systemctl restart ssh
 
 ## License
 
-[MIT](LICENSE) © 2022 rtCamp
+[MIT](LICENSE) © 2022 tangworkshop
 
 ## Does this interest you?
 
-<a href="https://rtcamp.com/"><img src="https://rtcamp.com/wp-content/uploads/2019/04/github-banner@2x.png" alt="Join us at rtCamp, we specialize in providing high performance enterprise WordPress solutions"></a>
+<a href="https://tangworkshop.com/"><img src="https://tangworkshop.com/wp-content/uploads/2019/04/github-banner@2x.png" alt="Join us at tangworkshop, we specialize in providing high performance enterprise WordPress solutions"></a>
